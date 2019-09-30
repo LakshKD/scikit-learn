@@ -1081,7 +1081,7 @@ def fbeta_score(y_true, y_pred, beta, labels=None, pos_label=1,
         Estimated targets as returned by a classifier.
 
     beta : float
-        Weight of precision in harmonic mean.
+        Determines the weight of recall in the combined score.
 
     labels : list, optional
         The set of labels to include when ``average != 'binary'``, and their
@@ -2369,7 +2369,7 @@ def brier_score_loss(y_true, y_prob, sample_weight=None, pos_label=None):
         raise ValueError("y_prob contains values less than 0.")
 
     # if pos_label=None, when y_true is in {-1, 1} or {0, 1},
-    # pos_labe is set to 1 (consistent with precision_recall_curve/roc_curve),
+    # pos_label is set to 1 (consistent with precision_recall_curve/roc_curve),
     # otherwise pos_label is set to the greater label
     # (different from precision_recall_curve/roc_curve,
     # the purpose is to keep backward compatibility).
